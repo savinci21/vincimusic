@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clutter Gallery</title>
+</head>
+<style>
+    body {
+        background-color: #dbdbdb;
+    }
+
+    .photo {
+        margin: -10px -10px;
+        padding: 0 10px;
+        background: #212121;
+        color: #fff;
+
+    }
+
+    .photo .header {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .photo .row {
+
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    @media screen and (max-width: 900px) {
+        section {
+            margin: 10% 10%;
+            padding: 5% 0;
+        }
+    }
+
+    section {
+        /* margin: 100px 200px; */
+        margin: 5% 10%;
+        transition: 0.3s;
+
+    }
+
+    section .imgBx {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s;
+
+    }
+
+    section #imgBx figure img.active {
+        position: fixed;
+        top: 100px;
+        left: 100px;
+        height: calc(100% - 200px);
+        width: calc(100% - 200px);
+        z-index: 1000;
+        transform: scale(1);
+        opacity: 1;
+        transition: 0.5s;
+        border-radius: 0px;
+
+    }
+
+
+    section #imgBx figure img:hover {
+        opacity: 0.8;
+        filter: grayscale(0.5);
+        cursor: pointer;
+    }
+
+
+    /*pinerest form*/
+
+    #imgBx {
+        column-width: 250px;
+        column-gap: 15px;
+    }
+
+    #imgBx figure {
+        display: inline-block;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+
+    }
+
+    #imgBx figure img {
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    #imgBx figure figcaption {
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        margin-top: 11px;
+    }
+
+
+
+    /*modal style*/
+    .modal {
+        background: rgb(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.5s ease-out;
+    }
+
+    .modal.open {
+        opacity: 1;
+        pointer-events: all;
+        z-index: 9;
+    }
+
+    .full-img {
+        position: absolute;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        border: 3px solid #fff;
+        transform: translate(-50%, -50%) scale(0.8);
+        transition: all 0.5s ease-out;
+    }
+
+    .full-img.open {
+        transform: translate(-50%, -50%) scale(1);
+        transition: all 0.5s ease-out;
+    }
+
+    /*close menu*/
+    .circle {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 100px;
+        pointer-events: none;
+        margin: 20px;
+        transition: all 3s ease-out;
+        z-index: 99;
+
+    }
+
+    .close {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 23px;
+        transition: all 3s ease-out;
+        z-index: 99;
+    }
+
+    .close span {
+        margin-left: 7px;
+        display: block;
+        position: absolute;
+        width: 70%;
+        height: 3px;
+        border-radius: 4px;
+        background: #fff;
+        transition: all 3s;
+        cursor: pointer;
+    }
+
+    .close span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
+
+    .close span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .close span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
+</style>
+</head>
+
+
+<body>
+
+    <div class="photo">
+        <div class="header">
+            <h1>Savinci Clutter Gallery </h1>
+            <p></p>
+        </div>
+    </div>
+
+    <section>
+        <!-- modal start -->
+        <div class="modal">
+            <div class="circle">
+                <div class="close">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <img src="" class="full-img" alt="">
+        </div>
+
+        <!-- modal end -->
+
+
+        <div id="imgBx">
+            <figure>
+                <img src="01.jpg" data-original="01.jpg">
+                <figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>
+            </figure>
+
+            <figure>
+                <img src="02.jpg" data-original="02.jpg">>
+                <figcaption>Rapunzel, clothed in 1820’s period fashion</figcaption>
+            </figure>
+
+            <figure>
+                <img src="03.jpg " data-original="03.jpg">>
+                <figcaption>Belle, based on 1770’s French court fashion</figcaption>
+            </figure>
+
+            <figure>
+                <img src="04.jpg" data-original="04.jpg">>
+                <figcaption>Mulan, based on the Ming Dynasty period</figcaption>
+            </figure>
+
+            <figure>
+                <img src="05.jpg" data-original="05.jpg">>
+                <figcaption>Sleeping Beauty, based on European fashions in 1485</figcaption>
+            </figure>
+
+            <figure>
+                <img src="09.jpg" data-original="09.jpg">>
+                <figcaption>Pocahontas based on 17th century Powhatan costume</figcaption>
+            </figure>
+
+            <figure>
+                <img src="06.jpg" data-original="06.jpg">>
+                <figcaption>Snow White, based on 16th century German fashion</figcaption>
+            </figure>
+
+            <figure>
+                <img src="07.jpg" data-original="07.jpg">>
+                <figcaption>Ariel wearing an evening gown of the 1890’s</figcaption>
+            </figure>
+
+            <figure>
+                <img src="08.jpg" data-original="08.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="10.jpg" data-original="10.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="11.jpg" data-original="11.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="12.jpg" data-original="12.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="13.jpg" data-original="13.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="14.jpg" data-original="14.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="15.jpg" data-original="15.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+            <figure>
+                <img src="16.jpg" data-original="16.jpg">>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            </figure>
+        </div>
+
+    </section>
+
+
+    <script>
+        const modal = document.querySelector(".modal");
+        const previews = document.querySelectorAll("figure img");
+        const original = document.querySelector(".full-img");
+
+
+        previews.forEach((preview) => {
+            preview.addEventListener("click", () => {
+                modal.classList.add("open");
+                original.classList.add("open");
+                const originalSrc = preview.getAttribute("data-original");
+                original.src = originalSrc;
+
+            })
+        })
+
+        modal.addEventListener("click", (e) => {
+            if (e.target.classList.contains("modal")) {
+                modal.classList.remove("open");
+                original.classList.remove("open");
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
