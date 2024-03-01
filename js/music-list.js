@@ -445,6 +445,20 @@ let allMusic = [{
   artist: "Faye Won",
   img: "music-67",
   src: "music-67"
+},
+
+{
+  name: "Eye in the Sky",
+  artist: "The Alan Parsons Project",
+  img: "music-68",
+  src: "music-68"
+},
+
+{
+  name: "Ashes",
+  artist: "Stellar",
+  img: "music-69",
+  src: "music-69"
 }
 
 
