@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Our graphic workshop</title>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/graphic/icons/css/fontello.css">
+	<style>
+		html {
+			font-family: 'Noto Sans KR', sans-serif;
+		}
+
+		body {
+			margin: 0;
+		}
+
+		div,
+		section,
+		header,
+		footer,
+		p,
+		h1,
+		h2 {
+			box-sizing: border-box;
+		}
+
+		a {
+			color: royalblue;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.scroll-content {
+			/*border: 3px solid rgb(255, 0, 191);*/
+		}
+
+
+		.global-width {
+		
+			max-width: 620px;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+
+		/* 화면을 고정시킴 */
+		.scroll-graphic {
+			overflow-x: hidden;
+			/*border: 3px solid rgb(89, 0, 255);*/
+			position: sticky;
+			top: 0;
+			height: 100vh;
+		}
+
+		.graphic-item {
+			/*border: 4px solid red;*/
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			transition: 0.5s;
+			will-change: opacity;
+		}
+
+		.visible {
+			opacity: 1;
+		}
+
+		.scroll-text {
+			/*border: 3px solid rgb(179, 255, 0);*/
+			position: relative;
+
+		}
+
+		.step {
+			margin-bottom: 60vh;
+			border-radius: 10px;
+			padding: 0.5rem 1rem;
+			background: rgba(255, 255, 255, 0.8);
+			box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+		}
+
+		/* 그림 크기 맞추기*/
+		.scene-img {
+			max-width: 100vh;
+		}
+
+		.bird {
+			position: absolute;
+			left: 0;
+			bottom: 70%;
+			width: 100px;
+			transform: translateX(-100%);
+			transition: 1.5s 0.5s linear;
+
+		}
+
+		[data-index="5"] .bird {
+			left: 30%;
+			bottom: 30%;
+		}
+
+		.normal-content{
+			margin-top: -350px ;
+		}
+
+		.global-footer {
+			padding: 2rem 0;
+			text-align: center;
+		}
+		.strikethrough{
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="header">
+		<div class="global-width">
+			<h1 class="page-title">코로나19 시대, 제주 사는 개발자의 하루</h1>
+			<p>
+				이 페이지는 BBC 비주얼저널리즘 팀에서 제작한 <a
+					href="https://www.bbc.com/korean/resources/idt-48d3c9a7-4063-4289-9726-611b5ea9d7b5"
+					target="_blank">'재택근무의 일상화'... 코로나19가 바꿀 사무실의 미래</a> 페이지를 비슷하게 구현해 본 개발 예제입니다. </p>
+		</div>
+	</header>
+	<section class="scroll-content">
+		<div class="scroll-graphic">
+			<div class="graphic-item"><img class="scene-img" src="images/00.png" alt=""></div>
+			<div class="graphic-item"><img class="scene-img" src="images/01.png" alt=""></div>
+			<div class="graphic-item" data-action="birdFlies">
+				<img class="bird" src="images/bird.gif" alt="">
+				<img class="scene-img" src="images/02.png" alt="">
+			</div>
+			<div class="graphic-item"><img class="scene-img" src="images/bird.gif" alt=""></div>
+			<div class="graphic-item"><img class="scene-img" src="images/03.png" alt=""></div>
+			<div class="graphic-item" data-action="birdFlies2">
+				<img class="bird" src="images/bird.gif" alt="">
+				<img class="scene-img" src="images/04.png" alt="">
+			</div>
+			<div class="graphic-item"><img class="scene-img" src="images/05.png" alt=""></div>
+			<div class="graphic-item"><img class="scene-img" src="images/06.png" alt=""></div>
+			<div class="graphic-item"><img class="scene-img" src="images/07.png" alt=""></div>
+			<div class="graphic-item"><img class="scene-img" src="images/08.png" alt=""></div>
+		</div>
+		<div class="scroll-text global-width">
+			<div class="step">
+				<p>
+					일분이를 소개한다.<br><br><a href="https://studiomeal.com" target="_blank">1분코딩</a>의 마스코트이며 제주 바닷가에 사는 개발자인
+					일분이는 코로나19 이전부터 재택근무를 해왔지만, 코로나19는 일분이의 생활에도 변화를 주었다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					아침에 일어나면, 커피를 내리며 정신을 차린다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					사회적 거리두기를 위해 한적한 바닷길쪽으로 러닝을 한다.<br>가끔 만나는 바닷새와 눈인사를 나눈다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					맞다, 트위터의 걔.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					운동을 마치고 집에 돌아와 작업을 시작한다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					밥은 집에서 먹거나, 테이크아웃이 가능한 메뉴를 골라 탁 트인 야외에서 먹는다. 물론 사회적 거리두기를 하기 위함이다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					보통 오후 작업은 집 근처의 일하기 좋은 카페에서 해왔지만, 코로나19 이후에는 집에서 하는 날이 많아졌다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					라면 매니아 답게 유튜브로 <a href="https://www.youtube.com/channel/UCYzTR8jV9_xv1p25N2dNBQQ"
+						target="_blank">라면소녀</a> 채널을 보며 간식으로 라면을 먹는다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					자기 전, 가끔 <a href="https://www.youtube.com/channel/UCkTRKCuFrRiXQm_gMG1uDvg" target="_blank">요가소년</a>
+					채널을 보며 요가를 한다.
+				</p>
+			</div>
+			<div class="step">
+				<p>
+					일과를 마치고 <span class="strikethrough">폰질을 한다</span> 잠자리에 든다.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="normal-content global-width">
+		<h2>도시를 떠나는 사람들</h2>
+		<p>원격근무 하시는 개발자 디자이너분들, 제주로 오세요. 진짜 좋아요.</p>
+		<h2>언택트 시대가 온다</h2>
+		<p>언택트(Untact)'란 '콘택트(contact: 접촉하다)'에서 부정의 의미인 '언(un-)을 합성한 말로, 기술의 발전을 통해 비대면으로 이루어지는 활동 경향을 의미한다. </p>
+		<h2>내일은 어떤 모습일까</h2>
+	</section>
+
+	<footer class="global-footer">
+		<a href="../../index.html">Savinci Blog Home <i class="icon-left-big"></i></a>
+	</footer>
+
+	<script>
+		(() => {
+			const actions = {
+				birdFlies(key) {
+					if (key) {
+						document.querySelector('[data-index="2"] .bird').style.transform =
+							'translateX(1800px)';
+						//'translateX(${window.innerWidth}px)';
+					} else {
+						document.querySelector('[data-index="2"] .bird').style.transform =
+							'translateX(-100%)';
+						//'translateX(${window.innerWidth}px)';
+					}
+
+				},
+
+				birdFlies2(key) {
+					if (key) {
+						document.querySelector('[data-index="5"] .bird').style.transform =
+							'translate(500px, -500PX )';
+						//'translateX(${window.innerWidth}px)';
+					} else {
+						document.querySelector('[data-index="5"] .bird').style.transform =
+							'translateX(-100%)';
+						//'translateX(${window.innerWidth}px)';
+					}
+
+				}
+			};
+
+			const stepElems = document.querySelectorAll(".step");
+			const graphicElems = document.querySelectorAll(".graphic-item");
+			let currentItem = graphicElems[0]; // 현재 활성화된(visible 클래스가 붙은) .graphic-item을 지정
+			let ioIndex;
+
+			const io = new IntersectionObserver((entries, observer) => {
+				ioIndex = entries[0].target.dataset.index * 1;
+
+			});
+
+			for (let i = 0; i < stepElems.length; i++) {
+				io.observe(stepElems[i]);
+				//stepElems[i].setAttribute('data-index', i);
+				stepElems[i].dataset.index = i;
+				graphicElems[i].dataset.index = i;
+			}
+
+			function activate(action) {
+				currentItem.classList.add('visible');
+				if (action) {
+					actions[action](true);
+				}
+			}
+
+			function inactivate(action) {
+				currentItem.classList.remove('visible');
+				if (action) {
+					actions[action](false);
+				}
+
+			}
+
+
+			window.addEventListener('scroll', () => {
+				let step;
+				let boundingRect;
+
+				//let temp = 0; 루프단축
+				// for (let i = 0; i < stepElems.length; i++) 
+				for (let i = ioIndex - 1; i < ioIndex + 2; i++) {
+					step = stepElems[i];
+					if (!step) continue;
+					boundingRect = step.getBoundingClientRect();
+
+					//temp++; 루프단축
+
+					if (boundingRect.top > window.innerHeight * 0.1 &&
+						boundingRect.top < window.innerHeight * 0.8) {
+						//graphicElems[step.dataset.index].classList.add('visible');
+
+						inactivate(currentItem.dataset.action);
+						currentItem = graphicElems[step.dataset.index];
+						activate(currentItem.dataset.action);
+					}
+
+				}
+
+			});
+
+			window.addEventListener('load', () => {
+				setTimeout(() => scrollTo(0, 0), 100);
+			}); // 새로고침 최초화면 복귀
+
+			activate();
+
+		})();
+	</script>
+</body>
+
+</html>
